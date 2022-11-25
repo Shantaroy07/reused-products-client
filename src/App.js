@@ -4,8 +4,10 @@ import router from './Router/Router';
 
 function App() {
   return (
-    <div className="App container mx-auto">
+
+    <div className="  App container mx-auto bg-base-300">
       <RouterProvider router={router}></RouterProvider>
+
     </div>
   );
 }
