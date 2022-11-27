@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 
 const Categories = () => {
     const [categories, setCategories] = useState([]);
@@ -8,6 +9,8 @@ const Categories = () => {
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
+
+
 
     return (
         <div className='my-5 container mx-auto' >
@@ -22,7 +25,7 @@ const Categories = () => {
                                 <h2 className="card-title text-2xl ">{category.category_name}</h2>
 
                                 <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">See Books</button>
+                                    <button className="btn btn-primary"><Link to={`/category/${category.category_name}`}>See Books</Link> </button>
                                 </div>
                             </div>
                         </div>)
