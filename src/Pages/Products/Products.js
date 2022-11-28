@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import BookingOrder from './BookingOrder/BookingOrder';
 
 const Products = () => {
     const products = useLoaderData();
@@ -27,8 +28,13 @@ const Products = () => {
                             </div>
 
                             <div className="card-actions justify-end mt-5">
-                                <button className="btn btn-primary">Book Now </button>
+                                <label
+                                    htmlFor="booking-order"
+                                    className="btn btn-primary text-white">Book Now</label>
                             </div>
+                            <BookingOrder
+                                product={product}
+                            ></BookingOrder>
                         </div>
                     </div>
                 )
