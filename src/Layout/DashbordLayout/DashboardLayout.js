@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Navbar from "../../Shared/Navbar";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -10,9 +10,11 @@ const DashboardLayout = () => {
     const [dashboardUser, setDashBoardUser] = useState({})
     const email = user?.email;
 
-    fetch(`http://localhost:5000/users/${email}`)
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${email}`)
         .then(res => res.json())
         .then(data => setDashBoardUser(data[0]));
+    }, [])
 
     return (
         <div>
