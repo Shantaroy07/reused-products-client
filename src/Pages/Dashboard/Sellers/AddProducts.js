@@ -34,7 +34,9 @@ const AddProduct = () => {
                         used: data.year,
                         description: data.about,
                         seller_name: user.displayName,
-                        img: imgData.data.url
+                        img: imgData.data.url,
+
+                        seller_email: user?.email
                     }
 
                     // save doctor information to the database
