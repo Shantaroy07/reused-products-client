@@ -20,6 +20,8 @@ const BookingOrder = ({ product }) => {
             phone,
             delivery_location,
             img: product.img,
+            productName: product.name,
+            category: product.category_name
 
         }
 
