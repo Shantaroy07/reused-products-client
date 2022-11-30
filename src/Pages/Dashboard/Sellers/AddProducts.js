@@ -24,7 +24,7 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(imgData => {
                 if (imgData.success) {
-                    console.log(imgData.data.url);
+
                     const product = {
                         name: data.name,
                         category_name: data.category,
@@ -39,7 +39,7 @@ const AddProduct = () => {
                         seller_email: user?.email
                     }
 
-                    // save doctor information to the database
+
                     fetch('http://localhost:5000/category', {
                         method: 'POST',
                         headers: {
